@@ -271,10 +271,16 @@ function finishChapter(token){
  if(token!==chapterSerial)return;
  clearTimeout(narrationWatchdog);narrationWatchdog=null;
  chapterSpeaking=false;chapterCurrent=null;
- if(onBattleChapterEnd(currentChapterKey))return;
+ if(onBattleChapterEnd(currentChapterKey)){
+  if(currentChapterKey==='victory'&&historyEnabled){
+   clearTimeout(historyTimer);
+   historyTimer=setTimeout(()=>{if(!chapterSpeaking&&chapterQueue.length===0)historyCard.style.display='none'},1500);
+  }
+  return;
+ }
  if(chapterQueue.length){playNextChapter();return;}
- // 마지막 승리 자막은 계속 보여 줍니다.
- if(historyEnabled&&currentChapterKey!=='victory'){
+ // 모든 해설 자막은 내레이션 종료 후 1.5초 이내 자동으로 닫습니다.
+ if(historyEnabled){
   clearTimeout(historyTimer);
   historyTimer=setTimeout(()=>{if(!chapterSpeaking&&chapterQueue.length===0)historyCard.style.display='none'},1700);
  }
