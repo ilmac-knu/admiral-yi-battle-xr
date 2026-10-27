@@ -1,5 +1,5 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>이순신 장군 | 책상 위 판옥선 바다 XR</title><style>*{box-sizing:border-box}body{margin:0;background:#0c1d30;color:white;font-family:system-ui,'Malgun Gothic',sans-serif}header{padding:13px 16px;background:#172f4a}h2{margin:0;font-size:21px}small{color:#c7d9ea}#view{height:calc(100dvh - 205px);min-height:260px;position:relative;touch-action:none} @media(max-width:650px){header{padding:7px 10px}h2{font-size:17px}small{font-size:11px}#view{height:calc(100dvh - 185px);min-height:210px}#status{font-size:12px;padding:6px 10px;min-height:30px}#panel{position:fixed;bottom:0;left:0;right:0;z-index:1000;display:grid;grid-template-columns:1fr 1fr;gap:5px;padding:7px;background:#233e59ee}#panel button{padding:10px 3px;font-size:12px;min-height:42px}.note{display:none}#badge{font-size:11px;top:5px;left:5px}}#status{background:#142d48;padding:12px;min-height:44px}#panel{display:flex;flex-wrap:wrap;gap:9px;padding:12px;background:#233e59}button{background:#f3d17e;color:#182b3c;border:0;border-radius:7px;padding:12px;font-weight:700;cursor:pointer}button:disabled{opacity:.45;cursor:not-allowed}.note{padding:12px;font-size:13px;color:#c9d8e9}#badge{position:absolute;top:12px;left:12px;background:#14283dbd;padding:9px;border-radius:7px;font-size:13px;pointer-events:none}#reticle{display:none;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:48px;height:48px;border:3px solid #00ff66;border-radius:50%;pointer-events:none}.in-ar #panel{position:fixed;z-index:9999;bottom:0;left:0;right:0;display:flex;flex-wrap:wrap;justify-content:center;background:#18354bcc;padding:6px;gap:5px}.in-ar #panel button{padding:9px 7px;font-size:12px}.in-ar #status{position:fixed;top:3px;left:3px;right:3px;z-index:9998;background:#18354bbb;font-size:12px}.in-ar header,.in-ar .note{display:none}.in-ar #view{height:100dvh} #historyCard{position:fixed;top:70px;left:12px;right:12px;z-index:10005;max-width:560px;margin:auto;background:rgba(10,30,49,.94);color:#fff;border:1px solid #dfc181;border-radius:12px;padding:14px 16px;box-shadow:0 6px 25px #0006;display:none;pointer-events:auto}#historyCard strong{display:block;color:#ffdf8e;font-size:16px;margin-bottom:6px}#historyCard p{margin:0;line-height:1.55;font-size:14px}#historyCard .foot{font-size:11px;color:#b9cbd7;margin-top:8px}#historyClose{position:absolute;right:8px;top:6px;background:transparent;color:white;padding:4px 9px;font-size:19px}.in-ar #historyCard{top:92px;max-width:90vw;padding:10px 12px}.in-ar #historyCard p{font-size:12px}.in-ar #historyCard strong{font-size:14px}@media(max-width:650px){#historyCard{top:60px;left:8px;right:8px;padding:10px 12px}#historyCard p{font-size:12px}}
-</style><script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/"}}</script></head><body><header><h2>이순신 장군의 바다 — 판옥선 XR</h2><small>13차 · 역사 해설 내레이션과 대포 효과음</small></header><div id="view"><div id="badge">3D 항해 미리보기 / 지원 기기에서는 카메라 AR</div><div id="reticle"></div></div><div id="status">3D 모델을 불러오는 중입니다…</div><div id="historyCard" role="status" aria-live="polite"><button id="historyClose" aria-label="해설 닫기">×</button><strong id="historyTitle"></strong><p id="historyText"></p><div class="foot">※ 역사적 배경에 기초한 축약 연출이며 실제 함선별 교전 순서를 재현하지 않습니다.</div></div><div id="panel"><button id="preview" disabled>▶ 3D 항해 연출 시작</button><button id="ar" disabled>📷 카메라 AR 시작</button><button id="place" style="display:none">이 위치에 바다 배치</button><button id="again" disabled>↻ 다시 보기</button><button id="enemyStart" disabled>⚔ 일본군 함선 등장</button><button id="fireStart" disabled>💥 판옥선 포격 시작</button><button id="historyToggle">📜 역사 해설</button><button id="voiceToggle">🔊 내레이션 켜짐</button><button id="soundToggle">💥 대포 소리 켜짐</button><button id="enemyDirection">↻ 적선 방향 180°</button><button id="turn">↻ 배 45° 회전</button><button id="zoomIn">＋ 확대</button><button id="zoomOut">－ 축소</button></div><div class="note">녹색 원이 나타나면 바다 배치 버튼을 누르세요. 카메라 AR: Android Chrome의 WebXR AR 지원 기기에서 HTTPS로 실행하세요. 바닥을 천천히 비춰 표면을 찾고 '이 위치에 바다 배치'를 누릅니다. 미지원 기기에서는 3D 미리보기로 체험할 수 있습니다. 일본군 함선은 japanese_warship.glb를 한 번 불러와 3척으로 복제합니다. 역사적 정확성은 별도 검토가 필요합니다. 포격 버튼을 누르면 포연·포탄·물보라·적선 3척의 순차 침몰을 체험합니다. 다시 연출하려면 일본군 함선 등장 버튼을 누르세요.</div><script type="module">
+</style><script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/"}}</script></head><body><header><h2>이순신 장군의 바다 — 판옥선 XR</h2><small>14차 · 내레이션 완독 보장 및 대포 효과음</small></header><div id="view"><div id="badge">3D 항해 미리보기 / 지원 기기에서는 카메라 AR</div><div id="reticle"></div></div><div id="status">3D 모델을 불러오는 중입니다…</div><div id="historyCard" role="status" aria-live="polite"><button id="historyClose" aria-label="해설 닫기">×</button><strong id="historyTitle"></strong><p id="historyText"></p><div class="foot">※ 역사적 배경에 기초한 축약 연출이며 실제 함선별 교전 순서를 재현하지 않습니다.</div></div><div id="panel"><button id="preview" disabled>▶ 3D 항해 연출 시작</button><button id="ar" disabled>📷 카메라 AR 시작</button><button id="place" style="display:none">이 위치에 바다 배치</button><button id="again" disabled>↻ 다시 보기</button><button id="enemyStart" disabled>⚔ 일본군 함선 등장</button><button id="fireStart" disabled>💥 판옥선 포격 시작</button><button id="historyToggle">📜 역사 해설</button><button id="voiceToggle">🔊 내레이션 켜짐</button><button id="soundToggle">💥 대포 소리 켜짐</button><button id="enemyDirection">↻ 적선 방향 180°</button><button id="turn">↻ 배 45° 회전</button><button id="zoomIn">＋ 확대</button><button id="zoomOut">－ 축소</button></div><div class="note">녹색 원이 나타나면 바다 배치 버튼을 누르세요. 카메라 AR: Android Chrome의 WebXR AR 지원 기기에서 HTTPS로 실행하세요. 바닥을 천천히 비춰 표면을 찾고 '이 위치에 바다 배치'를 누릅니다. 미지원 기기에서는 3D 미리보기로 체험할 수 있습니다. 일본군 함선은 japanese_warship.glb를 한 번 불러와 3척으로 복제합니다. 역사적 정확성은 별도 검토가 필요합니다. 포격 버튼을 누르면 포연·포탄·물보라·적선 3척의 순차 침몰을 체험합니다. 다시 연출하려면 일본군 함선 등장 버튼을 누르세요.</div><script type="module">
 import * as THREE from 'three';import {OrbitControls} from 'three/addons/controls/OrbitControls.js';import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 const base='https://ilmac-knu.github.io/admiral-yi-history-xr/';const status=document.querySelector('#status'),view=document.querySelector('#view'),preview=document.querySelector('#preview'),ar=document.querySelector('#ar'),place=document.querySelector('#place'),again=document.querySelector('#again'),badge=document.querySelector('#badge');
 const scene=new THREE.Scene();scene.background=new THREE.Color(0xc2d6e0);const camera=new THREE.PerspectiveCamera(50,1,.01,100);camera.position.set(0,2.8,6.5);const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.xr.enabled=true;renderer.outputColorSpace=THREE.SRGBColorSpace;view.prepend(renderer.domElement);const orbit=new OrbitControls(camera,renderer.domElement);orbit.target.set(0,.1,0);orbit.enableDamping=true;orbit.update();scene.add(new THREE.HemisphereLight(0xffffff,0x507187,2.5));const sun=new THREE.DirectionalLight(0xfff6df,2.3);sun.position.set(2,7,4);scene.add(sun);
@@ -155,14 +155,60 @@ function refreshVoices(){
 }
 if(ttsSupported){refreshVoices();window.speechSynthesis.addEventListener?.('voiceschanged',refreshVoices)}
 else{voiceToggle.disabled=true;voiceToggle.textContent='🔇 내레이션 미지원';}
-function stopNarration(){if(ttsSupported){try{window.speechSynthesis.cancel()}catch(e){console.warn('TTS 중단:',e)}}}
+// 자막·음성을 한 묶음으로 재생합니다. 포격 중에는 다음 자막을 대기열에 넣습니다.
+let chapterQueue=[],chapterSpeaking=false,chapterSerial=0,chapterCurrent=null;
+let narrationWatchdog=null;
+function stopNarration(){
+ chapterSerial++;chapterQueue=[];chapterSpeaking=false;chapterCurrent=null;
+ clearTimeout(narrationWatchdog);narrationWatchdog=null;
+ if(ttsSupported){try{window.speechSynthesis.cancel()}catch(e){console.warn('TTS 중단:',e)}}
+}
 function narrateChapter(key){
- if(!voiceEnabled||!ttsSupported||!chapters[key])return;
- stopNarration();refreshVoices();
- const utterance=new SpeechSynthesisUtterance(chapters[key][0]+'. '+chapters[key][1]);
+ // 기존 버튼에서 사용되는 단독 재생용. 전투 자막은 enqueueChapter로 처리합니다.
+ enqueueChapter(key,false);
+}
+function enqueueChapter(key,queueMode=true){
+ if(!chapters[key])return;
+ if(!queueMode)stopNarration();
+ if(chapterCurrent===key||chapterQueue.includes(key))return;
+ chapterQueue.push(key);playNextChapter();
+}
+function playNextChapter(){
+ if(chapterSpeaking||chapterQueue.length===0)return;
+ const key=chapterQueue.shift(),ch=chapters[key];if(!ch)return;
+ chapterSpeaking=true;chapterCurrent=key;
+ currentChapterKey=key;
+ clearTimeout(historyTimer);
+ if(historyEnabled){historyTitle.textContent=ch[0];historyText.textContent=ch[1];historyCard.style.display='block';}
+ if(!voiceEnabled||!ttsSupported){
+  // 내레이션을 끈 경우에도 자막을 읽을 시간을 확보합니다.
+  const token=++chapterSerial;
+  const delay=Math.max(5500,Math.min(14000,(ch[0]+ch[1]).length*145));
+  narrationWatchdog=setTimeout(()=>finishChapter(token),delay);return;
+ }
+ refreshVoices();
+ const token=++chapterSerial;
+ const utterance=new SpeechSynthesisUtterance(ch[0]+'. '+ch[1]);
  utterance.lang='ko-KR';if(koVoice)utterance.voice=koVoice;
- utterance.rate=.92;utterance.pitch=1;utterance.volume=1;
- try{window.speechSynthesis.speak(utterance)}catch(e){console.warn('TTS 재생 실패:',e)}
+ utterance.rate=.88;utterance.pitch=1;utterance.volume=1;
+ let finished=false;
+ const complete=()=>{if(finished)return;finished=true;finishChapter(token)};
+ utterance.onend=complete;
+ utterance.onerror=e=>{console.warn('TTS 재생 오류:',e.error);complete()};
+ // 기기 TTS가 완료 이벤트를 전달하지 않을 때만 사용하는 넉넉한 안전 타이머.
+ narrationWatchdog=setTimeout(complete,Math.max(25000,(ch[0]+ch[1]).length*420));
+ try{window.speechSynthesis.speak(utterance)}catch(e){console.warn('TTS 재생 실패:',e);complete()}
+}
+function finishChapter(token){
+ if(token!==chapterSerial)return;
+ clearTimeout(narrationWatchdog);narrationWatchdog=null;
+ chapterSpeaking=false;chapterCurrent=null;
+ if(chapterQueue.length){playNextChapter();return;}
+ // 마지막 승리 자막은 계속 보여 줍니다.
+ if(historyEnabled&&currentChapterKey!=='victory'){
+  clearTimeout(historyTimer);
+  historyTimer=setTimeout(()=>{if(!chapterSpeaking&&chapterQueue.length===0)historyCard.style.display='none'},1700);
+ }
 }
 function ensureAudio(){
  if(!cannonSoundEnabled)return;
@@ -191,7 +237,7 @@ function playCannonSound(){
  noise.start(now);noise.stop(now+duration);
 }
 voiceToggle.onclick=()=>{voiceEnabled=!voiceEnabled;voiceToggle.textContent=voiceEnabled?'🔊 내레이션 켜짐':'🔇 내레이션 꺼짐';
- if(!voiceEnabled)stopNarration();else if(currentChapterKey)narrateChapter(currentChapterKey)};
+ if(!voiceEnabled)stopNarration();else if(currentChapterKey)enqueueChapter(currentChapterKey,false)};
 soundToggle.onclick=()=>{cannonSoundEnabled=!cannonSoundEnabled;soundToggle.textContent=cannonSoundEnabled?'💥 대포 소리 켜짐':'🔇 대포 소리 꺼짐';if(cannonSoundEnabled)ensureAudio()};
 const chapters={
  intro:['1597년, 명량해전','임진왜란 중인 1597년 음력 9월 16일, 이순신이 이끄는 조선 수군은 명량해협에서 일본 수군과 맞섰습니다.'],
@@ -201,11 +247,9 @@ const chapters={
  victory:['명량해전 — 조선 수군의 승리','조선 수군은 열세를 극복하고 일본 수군의 진격을 저지했습니다. 이 전투는 이순신의 지휘와 수군의 저항을 보여 주는 역사적 사례입니다.']
 };
 function showChapter(key,hold=6500){
- const ch=chapters[key];if(!ch)return;
- currentChapterKey=key;narrateChapter(key);
- if(!historyEnabled)return;
- clearTimeout(historyTimer);historyTitle.textContent=ch[0];historyText.textContent=ch[1];historyCard.style.display='block';
- if(hold>0)historyTimer=setTimeout(()=>{historyCard.style.display='none'},hold);
+ // hold는 기존 호출과 호환되도록 유지하되, TTS가 끝나기 전에 다음 해설로 넘기지 않습니다.
+ const battleSequence=(key==='fire'||key==='sink'||key==='victory');
+ enqueueChapter(key,battleSequence);
 }
 historyClose.onclick=()=>{clearTimeout(historyTimer);historyCard.style.display='none';stopNarration()};
 historyToggle.onclick=()=>{historyEnabled=!historyEnabled;historyToggle.textContent=historyEnabled?'📜 해설 켜짐':'📜 해설 꺼짐';if(historyEnabled)showChapter(victoryShown?'victory':'intro',9000);else historyCard.style.display='none'};
