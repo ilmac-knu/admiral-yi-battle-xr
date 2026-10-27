@@ -1,4 +1,4 @@
-<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>이순신 장군 | 책상 위 판옥선 바다 XR</title><style>*{box-sizing:border-box}body{margin:0;background:#0c1d30;color:white;font-family:system-ui,'Malgun Gothic',sans-serif}header{padding:13px 16px;background:#172f4a}h2{margin:0;font-size:21px}small{color:#c7d9ea}#view{height:calc(100dvh - 205px);min-height:260px;position:relative;touch-action:none} @media(max-width:650px){header{padding:7px 10px}h2{font-size:17px}small{font-size:11px}#view{height:calc(100dvh - 185px);min-height:210px}#status{font-size:12px;padding:6px 10px;min-height:30px}#panel{position:fixed;bottom:0;left:0;right:0;z-index:1000;display:grid;grid-template-columns:1fr 1fr;gap:5px;padding:7px;background:#233e59ee}#panel button{padding:10px 3px;font-size:12px;min-height:42px}.note{display:none}#badge{font-size:11px;top:5px;left:5px}}#status{background:#142d48;padding:12px;min-height:44px}#panel{display:flex;flex-wrap:wrap;gap:9px;padding:12px;background:#233e59}button{background:#f3d17e;color:#182b3c;border:0;border-radius:7px;padding:12px;font-weight:700;cursor:pointer}button:disabled{opacity:.45;cursor:not-allowed}.note{padding:12px;font-size:13px;color:#c9d8e9}#badge{position:absolute;top:12px;left:12px;background:#14283dbd;padding:9px;border-radius:7px;font-size:13px;pointer-events:none}#reticle{display:none;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:48px;height:48px;border:3px solid #00ff66;border-radius:50%;pointer-events:none}.in-ar #panel{position:fixed;z-index:9999;bottom:0;left:0;right:0;display:flex;flex-wrap:wrap;justify-content:center;background:#18354bcc;padding:6px;gap:5px}.in-ar #panel button{padding:9px 7px;font-size:12px}.in-ar #status{position:fixed;top:3px;left:3px;right:3px;z-index:9998;background:#18354bbb;font-size:12px}.in-ar header,.in-ar .note{display:none}.in-ar #view{height:100dvh} </style><script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/"}}</script></head><body><header><h2>이순신 장군의 바다 — 판옥선 XR</h2><small>10차 · 포격·적선 침몰·후퇴 연출</small></header><div id="view"><div id="badge">3D 항해 미리보기 / 지원 기기에서는 카메라 AR</div><div id="reticle"></div></div><div id="status">3D 모델을 불러오는 중입니다…</div><div id="panel"><button id="preview" disabled>▶ 3D 항해 연출 시작</button><button id="ar" disabled>📷 카메라 AR 시작</button><button id="place" style="display:none">이 위치에 바다 배치</button><button id="again" disabled>↻ 다시 보기</button><button id="enemyStart" disabled>⚔ 일본군 함선 등장</button><button id="fireStart" disabled>💥 판옥선 포격 시작</button><button id="enemyDirection">↻ 적선 방향 180°</button><button id="turn">↻ 배 45° 회전</button><button id="zoomIn">＋ 확대</button><button id="zoomOut">－ 축소</button></div><div class="note">녹색 원이 나타나면 바다 배치 버튼을 누르세요. 카메라 AR: Android Chrome의 WebXR AR 지원 기기에서 HTTPS로 실행하세요. 바닥을 천천히 비춰 표면을 찾고 '이 위치에 바다 배치'를 누릅니다. 미지원 기기에서는 3D 미리보기로 체험할 수 있습니다. 일본군 함선은 japanese_warship.glb를 한 번 불러와 3척으로 복제합니다. 역사적 정확성은 별도 검토가 필요합니다. 포격 버튼을 누르면 포연·포탄·물보라·적선 침몰·후퇴를 순서대로 체험합니다. 다시 연출하려면 일본군 함선 등장 버튼을 누르세요.</div><script type="module">
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>이순신 장군 | 책상 위 판옥선 바다 XR</title><style>*{box-sizing:border-box}body{margin:0;background:#0c1d30;color:white;font-family:system-ui,'Malgun Gothic',sans-serif}header{padding:13px 16px;background:#172f4a}h2{margin:0;font-size:21px}small{color:#c7d9ea}#view{height:calc(100dvh - 205px);min-height:260px;position:relative;touch-action:none} @media(max-width:650px){header{padding:7px 10px}h2{font-size:17px}small{font-size:11px}#view{height:calc(100dvh - 185px);min-height:210px}#status{font-size:12px;padding:6px 10px;min-height:30px}#panel{position:fixed;bottom:0;left:0;right:0;z-index:1000;display:grid;grid-template-columns:1fr 1fr;gap:5px;padding:7px;background:#233e59ee}#panel button{padding:10px 3px;font-size:12px;min-height:42px}.note{display:none}#badge{font-size:11px;top:5px;left:5px}}#status{background:#142d48;padding:12px;min-height:44px}#panel{display:flex;flex-wrap:wrap;gap:9px;padding:12px;background:#233e59}button{background:#f3d17e;color:#182b3c;border:0;border-radius:7px;padding:12px;font-weight:700;cursor:pointer}button:disabled{opacity:.45;cursor:not-allowed}.note{padding:12px;font-size:13px;color:#c9d8e9}#badge{position:absolute;top:12px;left:12px;background:#14283dbd;padding:9px;border-radius:7px;font-size:13px;pointer-events:none}#reticle{display:none;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:48px;height:48px;border:3px solid #00ff66;border-radius:50%;pointer-events:none}.in-ar #panel{position:fixed;z-index:9999;bottom:0;left:0;right:0;display:flex;flex-wrap:wrap;justify-content:center;background:#18354bcc;padding:6px;gap:5px}.in-ar #panel button{padding:9px 7px;font-size:12px}.in-ar #status{position:fixed;top:3px;left:3px;right:3px;z-index:9998;background:#18354bbb;font-size:12px}.in-ar header,.in-ar .note{display:none}.in-ar #view{height:100dvh} </style><script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/"}}</script></head><body><header><h2>이순신 장군의 바다 — 판옥선 XR</h2><small>11차 · 포격 후 일본군 함선 3척 순차 침몰</small></header><div id="view"><div id="badge">3D 항해 미리보기 / 지원 기기에서는 카메라 AR</div><div id="reticle"></div></div><div id="status">3D 모델을 불러오는 중입니다…</div><div id="panel"><button id="preview" disabled>▶ 3D 항해 연출 시작</button><button id="ar" disabled>📷 카메라 AR 시작</button><button id="place" style="display:none">이 위치에 바다 배치</button><button id="again" disabled>↻ 다시 보기</button><button id="enemyStart" disabled>⚔ 일본군 함선 등장</button><button id="fireStart" disabled>💥 판옥선 포격 시작</button><button id="enemyDirection">↻ 적선 방향 180°</button><button id="turn">↻ 배 45° 회전</button><button id="zoomIn">＋ 확대</button><button id="zoomOut">－ 축소</button></div><div class="note">녹색 원이 나타나면 바다 배치 버튼을 누르세요. 카메라 AR: Android Chrome의 WebXR AR 지원 기기에서 HTTPS로 실행하세요. 바닥을 천천히 비춰 표면을 찾고 '이 위치에 바다 배치'를 누릅니다. 미지원 기기에서는 3D 미리보기로 체험할 수 있습니다. 일본군 함선은 japanese_warship.glb를 한 번 불러와 3척으로 복제합니다. 역사적 정확성은 별도 검토가 필요합니다. 포격 버튼을 누르면 포연·포탄·물보라·적선 3척의 순차 침몰을 체험합니다. 다시 연출하려면 일본군 함선 등장 버튼을 누르세요.</div><script type="module">
 import * as THREE from 'three';import {OrbitControls} from 'three/addons/controls/OrbitControls.js';import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 const base='https://ilmac-knu.github.io/admiral-yi-history-xr/';const status=document.querySelector('#status'),view=document.querySelector('#view'),preview=document.querySelector('#preview'),ar=document.querySelector('#ar'),place=document.querySelector('#place'),again=document.querySelector('#again'),badge=document.querySelector('#badge');
 const scene=new THREE.Scene();scene.background=new THREE.Color(0xc2d6e0);const camera=new THREE.PerspectiveCamera(50,1,.01,100);camera.position.set(0,2.8,6.5);const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.xr.enabled=true;renderer.outputColorSpace=THREE.SRGBColorSpace;view.prepend(renderer.domElement);const orbit=new OrbitControls(camera,renderer.domElement);orbit.target.set(0,.1,0);orbit.enableDamping=true;orbit.update();scene.add(new THREE.HemisphereLight(0xffffff,0x507187,2.5));const sun=new THREE.DirectionalLight(0xfff6df,2.3);sun.position.set(2,7,4);scene.add(sun);
@@ -135,11 +135,11 @@ enemyLoader.load(ENEMY_MODEL_URL,gltf=>{
 },undefined,err=>{enemyModelFailed=true;console.error(err);setStatus('일본군 함선 GLB 로드 실패. japanese_warship.glb 파일명과 Pages 배포를 확인하세요.')});
 
 let enemyActive=false,enemyStarted=false,enemyStartTime=0;
-function resetEnemies(){enemyActive=false;enemyStarted=false;enemyShips.forEach(s=>{s.visible=false;s.userData.sinkStart=null;s.userData.sunk=false;s.userData.hitCount=0;s.userData.hitUntil=0;s.userData.retreatStart=null;s.userData.lastSmoke=0;});document.querySelector('#fireStart').disabled=true;clearBattleEffects()}
+function resetEnemies(){enemyActive=false;enemyStarted=false;enemyShips.forEach(s=>{s.visible=false;s.userData.sinkStart=null;s.userData.sunk=false;s.userData.hitCount=0;s.userData.hitUntil=0;s.userData.retreatStart=null;s.userData.lastSmoke=0;s.userData.damaged=false;});document.querySelector('#fireStart').disabled=true;clearBattleEffects()}
 function startEnemies(){
  if(!ready||!enemyModelReady){setStatus('일본군 함선 GLB를 불러오는 중입니다. 잠시 기다려 주세요.');return;}
  if(arSession&&!placed){setStatus('먼저 녹색 원 위치에 바다를 배치해 주세요.');return}
- enemyShips.forEach(s=>{s.userData.sinkStart=null;s.userData.sunk=false;s.userData.hitCount=0;s.userData.hitUntil=0;s.userData.retreatStart=null;s.userData.lastSmoke=0;});
+ enemyShips.forEach(s=>{s.userData.sinkStart=null;s.userData.sunk=false;s.userData.hitCount=0;s.userData.hitUntil=0;s.userData.retreatStart=null;s.userData.lastSmoke=0;s.userData.damaged=false;});
  enemyStarted=true;enemyActive=true;enemyStartTime=performance.now()/1000;document.querySelector('#fireStart').disabled=false;clearBattleEffects();
  setStatus('1597년 명량해협 — 일본군 함선 3척이 접근합니다. (교육용 축약 연출)');
  badge.textContent='⚔ 일본군 함선 접근 중';
@@ -171,14 +171,10 @@ function animateEnemies(time){
     burst('smoke',smokeAt,3);
     if(Math.random()<.45)burst('splash',new THREE.Vector3(root.position.x,.02,root.position.z),4);
    }
-   if(sinkT>=1){root.visible=false;root.userData.sunk=true;setStatus('일본군 함선 한 척이 침몰했습니다. (역사 교육용 축약 연출)');}
-  }else if(root.userData.retreatStart!=null){
-   const retreatT=Math.min(1,(time-root.userData.retreatStart)/5);
-   root.position.x+=retreatT*.52;root.position.z-=retreatT*.85;
-   root.rotation.y+=retreatT*Math.PI*.7;
+   if(sinkT>=1){root.visible=false;root.userData.sunk=true;const n=enemyShips.filter(s=>s.userData.sunk).length;setStatus(n===3?'일본군 함선 3척이 모두 침몰했습니다. (역사 교육용 연출)':'일본군 함선 '+n+'척 침몰 · 나머지 적선도 침몰 중입니다.');if(n===3)badge.textContent='⚓ 일본군 함선 3척 침몰 완료';}
   }
  });
- if(done&&enemyActive){enemyActive=false;setStatus('실제 아타케부네 3척이 접근했습니다. 다음 단계는 포격·포연·물보라입니다.');badge.textContent='일본군 함선 접근 완료'}
+ if(done&&enemyActive){enemyActive=false;if(!firing&&!enemyShips.some(s=>s.userData.sinkStart!=null)){setStatus('실제 아타케부네 3척이 접근했습니다. 포격을 시작하세요.');badge.textContent='일본군 함선 접근 완료'}}
 }
 // 9차 포격 연출: 파티클과 포탄은 모두 바다(world) 좌표계에 생성됩니다.
 // 선박의 진행·회전과 무관하게 포탄은 실제 발사 위치에서 목표까지 날아갑니다.
@@ -223,12 +219,12 @@ function beginSalvo(){
  if(!ready||!enemyStarted){setStatus('먼저 ⚔ 일본군 함선 등장 버튼을 눌러 주세요.');return}
  if(arSession&&!placed){setStatus('먼저 바다를 배치해 주세요.');return}
  if(firing){setStatus('포격 연출이 진행 중입니다.');return;}
- if(enemyShips[0]?.userData.sunk||enemyShips[0]?.userData.sinkStart!=null){setStatus('전투를 다시 보려면 일본군 함선 등장 버튼을 눌러 재시작하세요.');return;}
+ if(enemyShips.some(s=>s.userData.sunk||s.userData.sinkStart!=null)){setStatus('전투를 다시 보려면 일본군 함선 등장 버튼을 눌러 재시작하세요.');return;}
  clearBattleEffects();firing=true;
  setStatus('이순신 장군의 반격! 판옥선에서 포격이 시작됩니다. (교육용 연출)');badge.textContent='💥 조선 수군 포격 중';
- const plan=[[0,false],[1,true],[2,false],[1,false],[0,true],[2,true],[0,false]];
+ const plan=[[0,false],[1,true],[1,false],[2,true],[0,false],[2,false],[1,false]];
  plan.forEach(([target,miss],i)=>salvoTimers.push(setTimeout(()=>fireShot(target,miss),i*900)));
- salvoTimers.push(setTimeout(()=>{firing=false;badge.textContent='전투 연출 종료 · 다시 보기 가능';setStatus('포격이 끝났습니다. 첫 번째 적선은 침몰하고, 다른 적선은 손상·후퇴합니다. (교육용 연출)');},plan.length*900+1400));
+ salvoTimers.push(setTimeout(()=>{firing=false;setStatus('포격이 종료되었습니다. 일본군 함선 3척이 순차적으로 침몰하고 있습니다.');},plan.length*900+1400));
 }
 let previousEffectTime=null;
 function animateBattleEffects(time){
@@ -242,14 +238,13 @@ function animateBattleEffects(time){
     const enemy=enemyShips[o.targetIndex];if(enemy){
      enemy.userData.hitUntil=time+2.2;
      enemy.userData.hitCount=(enemy.userData.hitCount||0)+1;
-     // 첫 번째 적선은 두 차례 명중 시 침몰, 두 번째는 손상, 세 번째는 후퇴합니다.
-     if(o.targetIndex===0&&enemy.userData.hitCount>=2&&enemy.userData.sinkStart==null){
+     // 3척 모두 적어도 한 차례 명중하면 침몰을 시작합니다.
+     // 발사 순서가 다르므로 침몰 시점도 자연스럽게 달라집니다.
+     if(enemy.userData.sinkStart==null){
       enemy.userData.sinkStart=time;enemy.userData.lastSmoke=time;
-      setStatus('적선에 포탄이 명중했습니다! 선체가 기울어지며 침몰하기 시작합니다.');
-      badge.textContent='🔥 적선 침몰 중';
+      setStatus('일본군 함선 '+(o.targetIndex+1)+'번이 피격되어 침몰하기 시작합니다.');
+      badge.textContent='🔥 일본군 함선 침몰 중';
      }
-     if(o.targetIndex===1&&enemy.userData.hitCount>=1){enemy.userData.damaged=true;}
-     if(o.targetIndex===2&&enemy.userData.hitCount>=1&&enemy.userData.retreatStart==null){enemy.userData.retreatStart=time;}
     }
    }
    battleEffects.remove(o.mesh);cannonShots.splice(i,1);
