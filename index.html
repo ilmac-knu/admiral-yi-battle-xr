@@ -1,5 +1,5 @@
 <!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>이순신 장군 | 책상 위 판옥선 바다 XR</title><style>*{box-sizing:border-box}body{margin:0;background:#0c1d30;color:white;font-family:system-ui,'Malgun Gothic',sans-serif}header{padding:13px 16px;background:#172f4a}h2{margin:0;font-size:21px}small{color:#c7d9ea}#view{height:calc(100dvh - 205px);min-height:260px;position:relative;touch-action:none} @media(max-width:650px){header{padding:7px 10px}h2{font-size:17px}small{font-size:11px}#view{height:calc(100dvh - 185px);min-height:210px}#status{font-size:12px;padding:6px 10px;min-height:30px}#panel{position:fixed;bottom:0;left:0;right:0;z-index:1000;display:grid;grid-template-columns:1fr 1fr;gap:5px;padding:7px;background:#233e59ee}#panel button{padding:10px 3px;font-size:12px;min-height:42px}.note{display:none}#badge{font-size:11px;top:5px;left:5px}}#status{background:#142d48;padding:12px;min-height:44px}#panel{display:flex;flex-wrap:wrap;gap:9px;padding:12px;background:#233e59}button{background:#f3d17e;color:#182b3c;border:0;border-radius:7px;padding:12px;font-weight:700;cursor:pointer}button:disabled{opacity:.45;cursor:not-allowed}.note{padding:12px;font-size:13px;color:#c9d8e9}#badge{position:absolute;top:12px;left:12px;background:#14283dbd;padding:9px;border-radius:7px;font-size:13px;pointer-events:none}#reticle{display:none;position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:48px;height:48px;border:3px solid #00ff66;border-radius:50%;pointer-events:none}.in-ar #panel{position:fixed;z-index:9999;bottom:0;left:0;right:0;display:flex;flex-wrap:wrap;justify-content:center;background:#18354bcc;padding:6px;gap:5px}.in-ar #panel button{padding:9px 7px;font-size:12px}.in-ar #status{position:fixed;top:3px;left:3px;right:3px;z-index:9998;background:#18354bbb;font-size:12px}.in-ar header,.in-ar .note{display:none}.in-ar #view{height:100dvh} #historyCard{position:fixed;top:70px;left:12px;right:12px;z-index:10005;max-width:560px;margin:auto;background:rgba(10,30,49,.94);color:#fff;border:1px solid #dfc181;border-radius:12px;padding:14px 16px;box-shadow:0 6px 25px #0006;display:none;pointer-events:auto}#historyCard strong{display:block;color:#ffdf8e;font-size:16px;margin-bottom:6px}#historyCard p{margin:0;line-height:1.55;font-size:14px}#historyCard .foot{font-size:11px;color:#b9cbd7;margin-top:8px}#historyClose{position:absolute;right:8px;top:6px;background:transparent;color:white;padding:4px 9px;font-size:19px}.in-ar #historyCard{top:92px;max-width:90vw;padding:10px 12px}.in-ar #historyCard p{font-size:12px}.in-ar #historyCard strong{font-size:14px}@media(max-width:650px){#historyCard{top:60px;left:8px;right:8px;padding:10px 12px}#historyCard p{font-size:12px}}
-</style><script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/"}}</script></head><body><header><h2>이순신 장군의 바다 — 판옥선 XR</h2><small>15차 · 내레이션과 적선 3척 침몰 시점 동기화</small></header><div id="view"><div id="badge">3D 항해 미리보기 / 지원 기기에서는 카메라 AR</div><div id="reticle"></div></div><div id="status">3D 모델을 불러오는 중입니다…</div><div id="historyCard" role="status" aria-live="polite"><button id="historyClose" aria-label="해설 닫기">×</button><strong id="historyTitle"></strong><p id="historyText"></p><div class="foot">※ 역사적 배경에 기초한 축약 연출이며 실제 함선별 교전 순서를 재현하지 않습니다.</div></div><div id="panel"><button id="preview" disabled>▶ 3D 항해 연출 시작</button><button id="ar" disabled>📷 카메라 AR 시작</button><button id="place" style="display:none">이 위치에 바다 배치</button><button id="again" disabled>↻ 다시 보기</button><button id="enemyStart" disabled>⚔ 일본군 함선 등장</button><button id="fireStart" disabled>💥 판옥선 포격 시작</button><button id="historyToggle">📜 역사 해설</button><button id="voiceToggle">🔊 내레이션 켜짐</button><button id="soundToggle">💥 대포 소리 켜짐</button><button id="enemyDirection">↻ 적선 방향 180°</button><button id="turn">↻ 배 45° 회전</button><button id="zoomIn">＋ 확대</button><button id="zoomOut">－ 축소</button></div><div class="note">녹색 원이 나타나면 바다 배치 버튼을 누르세요. 카메라 AR: Android Chrome의 WebXR AR 지원 기기에서 HTTPS로 실행하세요. 바닥을 천천히 비춰 표면을 찾고 '이 위치에 바다 배치'를 누릅니다. 미지원 기기에서는 3D 미리보기로 체험할 수 있습니다. 일본군 함선은 japanese_warship.glb를 한 번 불러와 3척으로 복제합니다. 역사적 정확성은 별도 검토가 필요합니다. 포격 버튼을 누르면 포연·포탄·물보라·적선 3척의 순차 침몰을 체험합니다. 다시 연출하려면 일본군 함선 등장 버튼을 누르세요.</div><script type="module">
+</style><script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.164.1/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.164.1/examples/jsm/"}}</script></head><body><header><h2>이순신 장군의 바다 — 판옥선 XR</h2><small>16차 · 내레이션과 적선별 연속 포격·침몰 동기화</small></header><div id="view"><div id="badge">3D 항해 미리보기 / 지원 기기에서는 카메라 AR</div><div id="reticle"></div></div><div id="status">3D 모델을 불러오는 중입니다…</div><div id="historyCard" role="status" aria-live="polite"><button id="historyClose" aria-label="해설 닫기">×</button><strong id="historyTitle"></strong><p id="historyText"></p><div class="foot">※ 역사적 배경에 기초한 축약 연출이며 실제 함선별 교전 순서를 재현하지 않습니다.</div></div><div id="panel"><button id="preview" disabled>▶ 3D 항해 연출 시작</button><button id="ar" disabled>📷 카메라 AR 시작</button><button id="place" style="display:none">이 위치에 바다 배치</button><button id="again" disabled>↻ 다시 보기</button><button id="enemyStart" disabled>⚔ 일본군 함선 등장</button><button id="fireStart" disabled>💥 판옥선 포격 시작</button><button id="historyToggle">📜 역사 해설</button><button id="voiceToggle">🔊 내레이션 켜짐</button><button id="soundToggle">💥 대포 소리 켜짐</button><button id="enemyDirection">↻ 적선 방향 180°</button><button id="turn">↻ 배 45° 회전</button><button id="zoomIn">＋ 확대</button><button id="zoomOut">－ 축소</button></div><div class="note">녹색 원이 나타나면 바다 배치 버튼을 누르세요. 카메라 AR: Android Chrome의 WebXR AR 지원 기기에서 HTTPS로 실행하세요. 바닥을 천천히 비춰 표면을 찾고 '이 위치에 바다 배치'를 누릅니다. 미지원 기기에서는 3D 미리보기로 체험할 수 있습니다. 일본군 함선은 japanese_warship.glb를 한 번 불러와 3척으로 복제합니다. 역사적 정확성은 별도 검토가 필요합니다. 포격 버튼을 누르면 포연·포탄·물보라·적선 3척의 순차 침몰을 체험합니다. 다시 연출하려면 일본군 함선 등장 버튼을 누르세요.</div><script type="module">
 import * as THREE from 'three';import {OrbitControls} from 'three/addons/controls/OrbitControls.js';import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
 const base='https://ilmac-knu.github.io/admiral-yi-history-xr/';const status=document.querySelector('#status'),view=document.querySelector('#view'),preview=document.querySelector('#preview'),ar=document.querySelector('#ar'),place=document.querySelector('#place'),again=document.querySelector('#again'),badge=document.querySelector('#badge');
 const scene=new THREE.Scene();scene.background=new THREE.Color(0xc2d6e0);const camera=new THREE.PerspectiveCamera(50,1,.01,100);camera.position.set(0,2.8,6.5);const renderer=new THREE.WebGLRenderer({antialias:true,alpha:true});renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.xr.enabled=true;renderer.outputColorSpace=THREE.SRGBColorSpace;view.prepend(renderer.domElement);const orbit=new OrbitControls(camera,renderer.domElement);orbit.target.set(0,.1,0);orbit.enableDamping=true;orbit.update();scene.add(new THREE.HemisphereLight(0xffffff,0x507187,2.5));const sun=new THREE.DirectionalLight(0xfff6df,2.3);sun.position.set(2,7,4);scene.add(sun);
@@ -160,7 +160,22 @@ let chapterQueue=[],chapterSpeaking=false,chapterSerial=0,chapterCurrent=null;
 let narrationWatchdog=null;
 // 15차: TTS 완료 시점과 적선 침몰을 연동합니다. 장면별 타이머는 재시작 시 모두 해제합니다.
 let battleStage=0, battleSyncTimers=[], battleSyncGeneration=0;
-function clearBattleSync(){battleSyncGeneration++;battleSyncTimers.forEach(clearTimeout);battleSyncTimers=[];battleStage=0;}
+// 각 내레이션 단계에서 해당 적선이 완전히 침몰할 때까지 연속 포격합니다.
+let continuousFireTimer=null;
+function stopContinuousFire(){if(continuousFireTimer!==null){clearTimeout(continuousFireTimer);continuousFireTimer=null;}}
+function fireUntilSunk(index){
+ stopContinuousFire();
+ const gen=battleSyncGeneration;
+ const volley=()=>{
+  if(gen!==battleSyncGeneration||!firing||battleStage!==index+1)return;
+  const ship=enemyShips[index];
+  if(!ship||ship.userData.sunk||!ship.visible){stopContinuousFire();return;}
+  fireShot(index,false); // 발사 때마다 기존 대포 소리·포연·포탄 효과가 재생됩니다.
+  continuousFireTimer=setTimeout(volley,1050);
+ };
+ volley();
+}
+function clearBattleSync(){stopContinuousFire();battleSyncGeneration++;battleSyncTimers.forEach(clearTimeout);battleSyncTimers=[];battleStage=0;}
 function stageDelay(fn,ms){const gen=battleSyncGeneration;const id=setTimeout(()=>{if(gen===battleSyncGeneration)fn()},ms);battleSyncTimers.push(id);return id;}
 function estimatedSpeechMs(key){const ch=chapters[key];return Math.max(8500,Math.round((ch[0].length+ch[1].length)*205));}
 function beginScriptedSinking(index,duration=4){
@@ -172,6 +187,9 @@ function beginScriptedSinking(index,duration=4){
 }
 function onBattleChapterStart(key){
  if(!firing)return;
+ if(key==='fire'&&battleStage===1)fireUntilSunk(0);
+ if(key==='sink'&&battleStage===2)fireUntilSunk(1);
+ if(key==='victory'&&battleStage===3)fireUntilSunk(2);
  if(key==='fire'&&battleStage===1){stageDelay(()=>beginScriptedSinking(0,3.1),Math.max(800,estimatedSpeechMs('fire')-3400));}
  if(key==='sink'&&battleStage===2){stageDelay(()=>beginScriptedSinking(1,3.1),Math.max(800,estimatedSpeechMs('sink')-3400));}
  if(key==='victory'&&battleStage===3){stageDelay(()=>beginScriptedSinking(2,3.1),Math.max(800,estimatedSpeechMs('victory')*.48-1500));}
@@ -185,6 +203,7 @@ function onBattleChapterEnd(key){
  // 음성이 예상보다 일찍 끝나더라도 해당 함선의 침몰 완료를 기다립니다.
  const waitForShip=()=>{
   const ship=enemyShips[index];if(!ship?.userData.sunk){stageDelay(waitForShip,180);return;}
+  stopContinuousFire();
   if(battleStage===1){battleStage=2;enqueueChapter('sink',true);}
   else if(battleStage===2){battleStage=3;enqueueChapter('victory',true);}
   else if(battleStage===3){firing=false;celebrateVictory();setStatus('적선 3척 침몰 · 명량해전 체험 완료');}
@@ -386,9 +405,8 @@ function beginSalvo(){
  if(enemyShips.some(s=>s.userData.sunk||s.userData.sinkStart!=null)){setStatus('전투를 다시 보려면 일본군 함선 등장 버튼을 눌러 재시작하세요.');return;}
  clearBattleEffects();firing=true;battleStage=1;ensureAudio();
  setStatus('이순신 장군의 반격! 판옥선에서 포격이 시작됩니다. (교육용 연출)');badge.textContent='💥 조선 수군 포격 중';showChapter('fire',7000);
- const plan=[[0,false],[1,true],[1,false],[2,true],[0,false],[2,false],[1,false]];
- plan.forEach(([target,miss],i)=>salvoTimers.push(setTimeout(()=>fireShot(target,miss),i*900)));
- // 포격 효과음은 기존 시간표대로 재생하고, 전투 종료는 마지막 해설 및 침몰 완료 후 처리합니다.
+ // 포격은 onBattleChapterStart에서 각 함선이 침몰할 때까지 약 1초 간격으로 반복합니다.
+ // 전투 종료는 마지막 해설 및 침몰 완료 후 처리합니다.
 }
 let previousEffectTime=null;
 function animateBattleEffects(time){
