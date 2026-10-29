@@ -1,72 +1,55 @@
-# 이순신 장군의 바다 XR 체험
+# 이순신 장군의 바다 — 판옥선 XR
 
-**저장소:** `ilmac-knu/admiral-yi-battle-xr`  
-**목표:** 스마트폰에서 책상·바닥 위에 가상의 바다를 배치하고, 이순신 장군이 탑승한 판옥선이 접근하는 역사 교육용 XR 콘텐츠를 구현합니다. PC에서는 일반 3D 체험을 제공합니다.
+**21차: 넓어진 울돌목 바다와 일본군 함선의 전방 접근**
 
-## 실행 주소
+1597년 명량해전을 소재로 한 **스마트폰·PC용 역사 교육 XR 체험**입니다. 판옥선과 이순신 장군, 일본군 아타케부네 3척을 3D로 표시하고, 한국어 내레이션·대포 소리·포연·물보라·함선 침몰을 통해 해전의 흐름을 체험합니다. 실제 전투의 개별 함선 배치와 교전 순서를 정확히 복원한 것은 아닌 **교육용 축약 연출**입니다.
 
-- XR 체험: https://ilmac-knu.github.io/admiral-yi-battle-xr/
-- 이 저장소: https://github.com/ilmac-knu/admiral-yi-battle-xr
+## 체험하기
 
-> 저장소 생성 및 GitHub Pages 배포가 완료되어야 실행 주소가 작동합니다.
+- 공개 페이지: https://ilmac-knu.github.io/admiral-yi-battle-xr/
+- 저장소: https://github.com/ilmac-knu/admiral-yi-battle-xr
 
 ## 파일 구성
 
 ```text
 admiral-yi-battle-xr/
-├── index.html   # 3D 바다·판옥선 접근 애니메이션 및 AR 체험
-└── README.md    # 사용법·외부 GLB 의존성·관리 주의사항
+├── index.html                 # XR 체험 화면 및 전투 애니메이션
+├── uldolmok-sea-texture.png   # 실감형 울돌목 바다 질감 (필수)
+├── japanese_warship.glb       # 일본군 아타케부네 모델 (필수)
+└── README.md                  # 프로젝트 설명
 ```
 
-**중요:** 이 저장소에는 `.glb` 파일 두 개를 별도로 보관하지 않습니다. `index.html`이 아래 **기존 저장소의 GitHub Pages 주소**에서 불러옵니다.
+`index.html`은 판옥선과 이순신 장군의 3D 모델을 **다른 저장소**에서 불러옵니다.
 
-## 외부 3D 모델 참조 위치
+- 판옥선: `https://ilmac-knu.github.io/admiral-yi-history-xr/Sketchfab_panokseon.glb`
+- 이순신 장군: `https://ilmac-knu.github.io/admiral-yi-history-xr/admiral-yi-sunsin.glb`
 
-| 모델 | 파일명 | 실제 보관 저장소 | 로딩 URL |
-|---|---|---|---|
-| 판옥선 | `Sketchfab_panokseon.glb` | `ilmac-knu/admiral-yi-history-xr` | https://ilmac-knu.github.io/admiral-yi-history-xr/Sketchfab_panokseon.glb |
-| 이순신 장군 | `admiral-yi-sunsin.glb` | `ilmac-knu/admiral-yi-history-xr` | https://ilmac-knu.github.io/admiral-yi-history-xr/admiral-yi-sunsin.glb |
+두 모델의 원본 저장소와 위 경로가 유지되어야 정상적으로 표시됩니다. 일본군 모델 `japanese_warship.glb`는 이 저장소에서 한 번 불러와 3척으로 복제합니다.
 
-기존 저장소: https://github.com/ilmac-knu/admiral-yi-history-xr
+## 21차 개선 사항
 
-### 이렇게 구성한 이유
+1. **울돌목 바다 면적 확대:** 해수면을 5 × 5에서 **8 × 8**(3D 장면 단위)로 넓혔습니다. 기존 `uldolmok-sea-texture.png` 질감과 움직이는 파도는 유지합니다.
+2. **일본군 함대 접근 방향 변경:** 판옥선의 뒤쪽이 아니라 **전방(화면의 먼 쪽, +Z)**에서 일본군 함선 3척이 판옥선을 향해 접근하도록 경로를 변경했습니다.
+3. **기존 기능 유지:** 한국어 역사 해설·TTS 내레이션, 대포 소리, 적선별 연속 포격과 빗나간 포탄, 세 척의 순차 침몰, 승리 해설 자동 종료, 판옥선 항적, AR 배치 및 회전·확대·축소를 유지합니다.
 
-- `Sketchfab_panokseon.glb`는 약 **27MB**여서 GitHub 웹의 일반 파일 업로드 제한(25MB)에 걸립니다.
-- 이전에 **Git Bash로 기존 저장소에 업로드**했으므로, 동일한 대용량 파일을 새 저장소에 중복 업로드하지 않고 재사용합니다.
-- 저장소 용량과 파일 관리의 중복을 줄입니다.
+> 카메라의 위치나 사용자가 3D 화면을 회전한 각도에 따라 화면에서 보이는 좌우·앞뒤는 달라질 수 있습니다. 일본군의 기본 접근 경로는 판옥선의 최종 위치(`z ≈ -0.15`)를 기준으로 **전방의 양(+)의 Z 위치에서 가까워지는 방향**으로 설정했습니다. 함선의 선수 방향이 반대로 보일 경우 화면의 **「↻ 적선 방향 180°」** 버튼으로 조정할 수 있습니다.
 
-### `index.html`에서 참조하는 방식
+## 사용 방법
 
-다음과 같은 URL 상수 또는 이에 해당하는 모델 로딩 코드가 있어야 합니다.
+1. PC에서는 **「▶ 3D 항해 연출 시작」**을 선택합니다. AR 지원 스마트폰에서는 **「📷 카메라 AR 시작」** 후 바닥을 인식하여 바다를 배치합니다.
+2. 판옥선이 먼 곳에서 다가오는 장면과 역사 해설을 확인합니다.
+3. **「⚔ 일본군 함선 등장」**을 눌러 전방에서 접근하는 일본군 함대 3척을 확인합니다.
+4. **「💥 판옥선 포격 시작」**을 눌러 한국어 내레이션과 함께 포격·피격·침몰 장면을 감상합니다.
+5. 적선 3척이 차례로 침몰하면 승리 해설이 나오고, 마지막 자막은 내레이션이 끝난 뒤 자동으로 닫힙니다.
 
-```javascript
-const PANOKSEON_URL =
-  'https://ilmac-knu.github.io/admiral-yi-history-xr/Sketchfab_panokseon.glb';
-const ADMIRAL_URL =
-  'https://ilmac-knu.github.io/admiral-yi-history-xr/admiral-yi-sunsin.glb';
-```
+## 실행 환경 및 주의사항
 
-> **주의:** 위 코드는 참조 위치를 설명하는 예시입니다. 실제 `index.html`의 변수명은 다를 수 있습니다. 파일을 수정할 때는 URL 문자열을 검색하여 확인하십시오.
+- 인터넷 연결이 필요합니다. Three.js 모듈과 외부 GLB 파일을 불러옵니다.
+- WebXR AR은 **HTTPS 환경**과 호환되는 Android 브라우저·기기가 필요합니다. 미지원 환경에서는 3D 미리보기로 체험할 수 있습니다.
+- 한국어 음성은 기기의 **SpeechSynthesis(TTS)** 기능을 사용하므로 기기와 브라우저에 따라 목소리·재생 시간이 다를 수 있습니다.
+- 바다 이미지 파일명은 반드시 **`uldolmok-sea-texture.png`**로 유지하고 `index.html`과 같은 폴더에 놓으십시오.
+- 3D 모델 사용 및 재배포 시 원본 제공자의 **라이선스와 저작자 표시 조건**을 확인하십시오. 일본군 함선은 Sketchfab의 *Atakebune Japanese Medieval Warship* 모델을 바탕으로 사용한 것으로, 정확한 제작자명과 라이선스는 다운로드 원본 페이지에서 확인하여 표기해야 합니다.
 
-## 유지보수 주의사항
+## 구현 방식
 
-1. **기존 `admiral-yi-history-xr` 저장소와 GitHub Pages를 삭제하거나 비공개로 전환하지 마십시오.** 새 콘텐츠가 GLB를 불러오지 못할 수 있습니다.
-2. 기존 저장소의 GLB **파일명(대소문자 포함)**과 경로를 변경하면 새 `index.html`의 URL도 함께 수정해야 합니다.
-3. 기존 GitHub 계정 또는 Pages 도메인을 이전하면 새 URL로 교체하고 정상 로딩 여부를 확인하십시오.
-4. GitHub Pages의 배포 설정과 브라우저 개발자 도구(Network/Console)에서 GLB 로딩 오류(예: 404, CORS)를 점검하십시오.
-5. 판옥선 모델은 제3자 제작물일 수 있으므로, **원본 Sketchfab 모델의 라이선스·저작자 표시 의무를 확인**하고 배포·출판 시 준수하십시오. 이 README는 사용 허가를 대신하지 않습니다.
-
-## 사용 및 테스트
-
-1. PC: 체험 페이지에서 일반 3D 장면과 판옥선 접근 애니메이션을 확인합니다.
-2. 스마트폰: HTTPS로 접속한 후 카메라 AR 시작 기능을 실행합니다(지원 기기·브라우저 필요).
-3. 책상이나 바닥을 인식하고 바다를 배치합니다.
-4. 판옥선과 장군이 표시되는지 확인합니다. AR을 지원하지 않는 환경에서는 일반 3D 체험을 이용합니다.
-
-## 향후 확장 계획
-
-- 적선 모델 추가
-- 포격·포연·물보라 효과
-- 역사 해설 및 승리 장면
-
-현재는 **바다와 판옥선 접근을 검증하는 1차 버전**이며, 역사적 전투 장면의 완성본은 아닙니다.
+Three.js, WebXR, GLTFLoader, Web Audio API, 브라우저 SpeechSynthesis를 활용한 웹 기반 체험입니다. 별도 전용 앱이나 VR 헤드셋 없이 지원 브라우저에서 실행하도록 구성했습니다.
